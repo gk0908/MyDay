@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+           .app-title {
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .app-title h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .app-title p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 400px;
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+    }
+
+    .header {
+        background: linear-gradient(to right, #3498db, #2980b9);
+        padding: 25px;
+        text-align: center;
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .form {
+        padding: 35px;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #2c3e50;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .form-group input:focus {
+        border-color: #3498db;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+
+    .form-group button {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(to right, #3498db, #2980b9);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+    }
+
+    .form-group button:active {
+        transform: translateY(0);
+    }
+
+    .form-footer {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 0.95rem;
+        color: #666;
+    }
+
+    .form-footer a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    .form-footer a:hover {
+        color: #2980b9;
+        text-decoration: underline;
+    }
+
+    /* Weather icons animation */
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    .weather-icon {
+        position: absolute;
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.8);
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .icon-1 { top: 10%; left: 10%; animation-delay: 0s; }
+    .icon-2 { top: 20%; right: 15%; animation-delay: 0.5s; }
+    .icon-3 { bottom: 15%; left: 15%; animation-delay: 1s; 
+    }
+</style>
+    </style>
+</head>
+<body>
+    <!-- Floating Weather Icons -->
+<div class="weather-icon icon-1">🌤️</div>
+<div class="weather-icon icon-2">🌧️</div>
+<div class="weather-icon icon-3">⛈️</div>
+
+<div class="container">
+    <div class="header">
+        Welcome Back
+    </div>
+    <form class="form" action="/login" method="POST">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Login to Dashboard</button>
+        </div>
+
+        <div class="form-footer">
+            New to Weather App? <a href="/signup">Create an Account</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
